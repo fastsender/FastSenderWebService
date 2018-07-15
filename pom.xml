@@ -8,8 +8,8 @@
   <name>FastSenderWebService</name>
   <modules>
     <module>FastSenderWebService-ear</module>
-    <module>FastSenderWebService-web</module>
     <module>FastSenderWebService-ejb</module>
+    <module>FastSenderWebService-web</module>
   </modules>
     <dependencies>
         <dependency>
