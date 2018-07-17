@@ -10,13 +10,9 @@
         <module>FastSenderWebService-ear</module>
         <module>FastSenderWebService-ejb</module>
         <module>FastSenderWebService-web</module>
+        <module>../FastSenderMongoBusiness</module>
     </modules>
     <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>FastSenderMongoBusiness</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         
         <dependency>
             <groupId>org.codehaus.mojo</groupId>
