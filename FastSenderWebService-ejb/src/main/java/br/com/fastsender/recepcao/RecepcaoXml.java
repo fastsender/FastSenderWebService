@@ -20,8 +20,8 @@ public class RecepcaoXml {
     EasyString parse = new EasyString();
     
     private XmlFacade xmlFacade = new XmlFacade();
-    public void recuperaXml() {
-        this.xmlReceb = parse.fileTxtToString("/home/lucas/Documents/FastSender/exemplo.xml");
+    public String recuperaXml() {
+        return this.xmlReceb = parse.fileTxtToString("/home/lucas/Documents/FastSender/exemplo.xml");
     }
     
     public static void main(String[] args) {
@@ -32,20 +32,10 @@ public class RecepcaoXml {
     //inicia a gravação do xml no mongo DB, onde vai ter um método recursivo de teste
     public void startXml4Mongo() {
         boolean send = true;
-        boolean popula = true;
         int count = 0;
-        List<String> listXml = new ArrayList<>();
-        recuperaXml();
+        String xmlToSend = recuperaXml();
         while (send) {
-            while(popula){
-                listXml.add(xmlReceb);
-                count++;
-                if (count == 100){
-                    popula = false;
-                }
-                
-            }
-            xmlFacade.getXmlBo().inserirXml(dbMongo, listXml);
+            xmlFacade.getXmlBo().inserirXml(dbMongo, xmlToSend);
         }
         if (count == 100){
             send = false;
